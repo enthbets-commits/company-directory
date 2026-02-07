@@ -111,3 +111,27 @@ if __name__ == "__main__":
     company_directory()
 
 
+"""
+DESIGN MEMO
+
+In this assignment, I created a company directory using a custom binary tree
+instead of built-in data structures. Recursive insertion worked by starting
+at the root of the tree and checking whether the current node matched the
+manager’s name. If it did not match, the function called itself on the left
+and right children, allowing the program to search through the entire tree
+until the correct manager was found.
+
+One challenge I faced was determining when to stop the recursive search.
+Without proper base cases, the function could continue searching even after
+the employee was inserted or attempt to access a node that did not exist.
+Carefully checking for None values and returning early helped prevent errors
+and unnecessary recursion. Another challenge was handling cases where a
+manager name did not exist or when a requested side was already occupied.
+
+Trees are preferable to other data structures when representing hierarchical
+relationships such as company reporting structures or file systems. Unlike
+lists or dictionaries, trees naturally model parent-child relationships and
+allow data to be stored and accessed in an organized way. This makes trees
+useful in real-world systems where structure, scalability, and clarity are
+important.
+"""
